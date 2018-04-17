@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "id.gits.gitsmvpkotlingooglebase"
+        applicationId "com.irfan_berasbdg.mvpstarter"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
