@@ -43,11 +43,6 @@ dependencies {
 
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxJava2AndroidVersion"
 
-    kapt "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
-    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
-    implementation "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

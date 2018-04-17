@@ -12,10 +12,9 @@ import io.reactivex.disposables.Disposable
  * Created by irfanirawansukirman on 12/03/18.
  */
 object MovieRemoteDataSource : MovieDataSource {
+
     private val apiService = ApiService.createInstance()
     private var compositeDisposable: CompositeDisposable? = null
-
-    //==============================================================================================
 
     override fun getMovies(callback: MovieDataSource.LoadMoviesCallback) {
         addSubscribe(apiService.getMovies()
@@ -39,11 +38,6 @@ object MovieRemoteDataSource : MovieDataSource {
         clearSubscribe()
     }
 
-    /**
-     * Register subscribe in app
-     *
-     * @param disposable
-     */
     private fun addSubscribe(disposable: Disposable) {
         if (compositeDisposable == null) {
             compositeDisposable = CompositeDisposable()
@@ -51,9 +45,6 @@ object MovieRemoteDataSource : MovieDataSource {
         }
     }
 
-    /**
-     * Clear all subscribers active in app
-     */
     private fun clearSubscribe() {
         if (compositeDisposable != null) {
             compositeDisposable!!.clear()

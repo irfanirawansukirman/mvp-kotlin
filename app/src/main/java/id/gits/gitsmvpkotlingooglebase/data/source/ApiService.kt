@@ -16,15 +16,10 @@ import java.util.concurrent.TimeUnit
  * Created by irfanirawansukirman on 12/03/18.
  */
 interface ApiService {
-    /**
-     * Do get movie list with this path
-     */
+
     @GET("3/discover/movie?api_key=1b2f29d43bf2e4f3142530bc6929d341&sort_by=popularity.desc")
     fun getMovies(): Observable<BaseApiResponse<List<Movie>>>
 
-    /**
-     * Instance of service retrofit
-     */
     companion object {
 
         fun createInstance(): ApiService {

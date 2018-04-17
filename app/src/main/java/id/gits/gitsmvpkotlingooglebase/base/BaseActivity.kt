@@ -8,8 +8,6 @@ import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
-import butterknife.ButterKnife
-import butterknife.Unbinder
 import kotlinx.android.synthetic.main.toolbar.view.*
 
 /**
@@ -20,25 +18,17 @@ abstract class BaseActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
     lateinit var progressDialog: ProgressDialog
 
-    lateinit var unbinder: Unbinder
-
     lateinit var activity: BaseActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutRes())
 
-        unbinder = ButterKnife.bind(this)
         activity = this
 
         initToolbar()
         initProgressDialog(activity)
         onActivityStarted(savedInstanceState)
-    }
-
-    override fun onDestroy() {
-        unbinder.unbind()
-        super.onDestroy()
     }
 
     fun showHomeBackButton() {

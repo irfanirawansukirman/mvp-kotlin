@@ -7,19 +7,8 @@ import id.gits.gitsmvpkotlingooglebase.data.model.Movie
  */
 interface MovieDataSource {
 
-    /**
-     * Callback view for load all movie
-     */
     interface LoadMoviesCallback {
         fun onMoviesLoaded(movies: List<Movie>)
-        fun onFailed(errorMessage: String)
-    }
-
-    /**
-     * Callback view for getting item movie
-     */
-    interface GetMovieCallback {
-        fun onMovieLoaded(movie: Movie)
         fun onFailed(errorMessage: String)
     }
 
